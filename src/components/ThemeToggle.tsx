@@ -22,7 +22,11 @@ const ThemeToggle = () => {
       <Button
         variant="outline"
         size="icon"
-        className="rounded-full w-12 h-12 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300"
+        className={`rounded-full w-12 h-12 shadow-lg hover:shadow-xl transition-all duration-300 ${
+          theme === 'light' 
+            ? 'bg-gray-100 border border-gray-200' 
+            : 'bg-gray-700 border border-gray-600'
+        }`}
         onClick={toggleTheme}
         aria-label="Toggle theme"
       >

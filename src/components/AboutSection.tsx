@@ -22,7 +22,7 @@ const AboutSection = () => {
           
           {/* Right side - Content */}
           <div className="lg:w-2/3">
-            <h2 className="section-title">About Me</h2>
+            <h2 className="section-title text-gray-800 dark:text-white">About Me</h2>
             
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
               I'm a passionate developer and designer with expertise in front-end development,
@@ -62,7 +62,7 @@ const AboutCard = ({ title, description, icon, color }: AboutCardProps) => {
       <div className={`w-12 h-12 rounded-lg flex items-center justify-center text-white mb-4 transition-colors duration-300 ${color} group-hover:scale-110`}>
         {icon}
       </div>
-      <h3 className={`font-montserrat font-bold text-lg mb-2 transition-colors duration-300 group-hover:${color.replace('bg-', 'text-')}`}>
+      <h3 className={`font-montserrat font-bold text-lg mb-2 text-gray-800 dark:text-white transition-colors duration-300 group-hover:${color.replace('bg-', 'text-')}`}>
         {title}
       </h3>
       <p className="text-gray-600 dark:text-gray-300">

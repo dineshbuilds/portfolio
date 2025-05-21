@@ -1,7 +1,6 @@
-
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { FaJava, FaReact, FaHtml5, FaCss3Alt, FaJs, FaDatabase, FaGitAlt, FaFire } from 'react-icons/fa';
+import { FaJava, FaReact, FaHtml5, FaCss3Alt, FaJs, FaGitAlt, FaFire } from 'react-icons/fa';
 import { BiTargetLock, BiSearch } from 'react-icons/bi';
 import { MdOutlineDesignServices, MdOutlineGraphicEq } from 'react-icons/md';
 import { RiPenNibLine, RiFolderChart2Line } from 'react-icons/ri';
@@ -91,7 +90,6 @@ const skillsData = {
     { name: 'HTML', icon: <FaHtml5 />, color: 'bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20', glowColor: 'text-orange-500' },
     { name: 'CSS', icon: <FaCss3Alt />, color: 'bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20', glowColor: 'text-blue-500' },
     { name: 'JavaScript', icon: <FaJs />, color: 'bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-900/20 dark:to-yellow-800/20', glowColor: 'text-yellow-400' },
-    { name: 'MySQL', icon: <FaDatabase />, color: 'bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-900/20 dark:to-indigo-800/20', glowColor: 'text-indigo-500' },
     { name: 'Git', icon: <FaGitAlt />, color: 'bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20', glowColor: 'text-red-500' },
     { name: 'Firebase', icon: <FaFire />, color: 'bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-900/20 dark:to-amber-800/20', glowColor: 'text-amber-500' }
   ],

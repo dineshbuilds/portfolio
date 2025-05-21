@@ -8,9 +8,9 @@ const HeroSection = () => {
       <div className="section-container flex flex-col md:flex-row items-center justify-between gap-10">
         {/* Left side with enhanced blob animation */}
         <div className="w-full md:w-1/2 flex justify-center animate-float relative">
-          <div className="blob blob-1 absolute w-[300px] h-[300px] opacity-40 rounded-[40%_60%_60%_40%_/_60%_30%_70%_40%] bg-gradient-to-br from-primary/70 to-secondary/70 dark:from-primary/50 dark:to-secondary/50 animate-blob-slow"></div>
-          <div className="blob blob-2 absolute w-[280px] h-[280px] opacity-40 rounded-[40%_60%_70%_30%_/_50%_60%_40%_60%] bg-gradient-to-br from-secondary/70 to-cv/70 dark:from-secondary/50 dark:to-cv/50 animate-blob-medium"></div>
-          <div className="blob blob-3 absolute w-[260px] h-[260px] opacity-40 rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] bg-gradient-to-br from-cv/70 to-projects/70 dark:from-cv/50 dark:to-projects/50 animate-blob-fast"></div>
+          <div className="blob blob-1 absolute w-[250px] h-[250px] md:w-[350px] md:h-[350px] opacity-40 rounded-[40%_60%_60%_40%_/_60%_30%_70%_40%] bg-gradient-to-br from-primary/70 to-secondary/70 dark:from-primary/50 dark:to-secondary/50 animate-blob-slow"></div>
+          <div className="blob blob-2 absolute w-[230px] h-[230px] md:w-[330px] md:h-[330px] opacity-40 rounded-[40%_60%_70%_30%_/_50%_60%_40%_60%] bg-gradient-to-br from-secondary/70 to-cv/70 dark:from-secondary/50 dark:to-cv/50 animate-blob-medium"></div>
+          <div className="blob blob-3 absolute w-[210px] h-[210px] md:w-[310px] md:h-[310px] opacity-40 rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] bg-gradient-to-br from-cv/70 to-projects/70 dark:from-cv/50 dark:to-projects/50 animate-blob-fast"></div>
           
           <div className="relative w-64 h-64 sm:w-80 sm:h-80">
             <img 

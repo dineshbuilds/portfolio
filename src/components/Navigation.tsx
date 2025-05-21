@@ -27,11 +27,11 @@ const Navigation = () => {
     <nav 
       className={cn(
         'fixed w-full top-0 z-50 transition-all duration-300 px-4 sm:px-6 lg:px-8',
-        isScrolled ? 'bg-white/80 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'
+        isScrolled ? 'bg-white/80 backdrop-blur-md shadow-md py-3 dark:bg-gray-900/80' : 'bg-transparent py-5'
       )}
     >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="#hero" className="text-xl font-bold font-montserrat text-primary">
+        <a href="#hero" className="text-xl font-bold font-montserrat text-primary dark:text-white">
           Dinesh<span className="text-secondary">Raja</span>
         </a>
         
@@ -41,7 +41,7 @@ const Navigation = () => {
             <a 
               key={link.name} 
               href={link.href}
-              className="font-medium text-gray-600 hover:text-secondary transition-colors"
+              className="font-medium text-gray-600 hover:text-secondary transition-colors dark:text-gray-300 dark:hover:text-secondary"
             >
               {link.name}
             </a>
@@ -50,7 +50,7 @@ const Navigation = () => {
         
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-gray-600 focus:outline-none"
+          className="md:hidden text-gray-600 dark:text-gray-300 focus:outline-none"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
@@ -66,7 +66,7 @@ const Navigation = () => {
       {/* Mobile Menu - Enhanced with slide animation */}
       <div 
         className={cn(
-          "md:hidden fixed top-[57px] left-0 w-full h-auto bg-white/95 backdrop-blur-md shadow-lg transition-transform duration-200 ease-in-out transform",
+          "md:hidden fixed top-[57px] left-0 w-full h-auto bg-white/95 backdrop-blur-md shadow-lg transition-all duration-150 ease-in-out transform dark:bg-gray-900/95",
           mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
@@ -75,7 +75,7 @@ const Navigation = () => {
             <a 
               key={link.name} 
               href={link.href}
-              className="font-medium text-gray-600 hover:text-secondary transition-colors py-2"
+              className="font-medium text-gray-600 hover:text-secondary transition-colors py-2 dark:text-gray-300 dark:hover:text-secondary"
               onClick={() => setMobileMenuOpen(false)}
             >
               {link.name}
