@@ -3,9 +3,9 @@ import { cn } from '@/lib/utils';
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="bg-[#f8f9fa] py-16 md:py-24">
+    <section id="projects" className="bg-gradient-to-br from-[#f9f9f9] to-white dark:from-gray-900 dark:to-gray-800 py-16 md:py-24">
       <div className="section-container">
-        <h2 className="section-title text-center mx-auto">My Projects</h2>
+        <h2 className="section-title text-center mx-auto dark:text-white">My Projects</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
@@ -34,7 +34,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, image, technologies, link }: ProjectCardProps) => {
   return (
-    <div className="glass-card rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+    <div className="glass-card rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-gray-800/50 dark:border-gray-700">
       <div className="h-48 md:h-64 overflow-hidden">
         <img 
           src={image} 
@@ -44,25 +44,25 @@ const ProjectCard = ({ title, description, image, technologies, link }: ProjectC
       </div>
       
       <div className="p-6">
-        <h3 className="font-montserrat font-bold text-xl mb-2">{title}</h3>
+        <h3 className="font-montserrat font-bold text-xl mb-2 dark:text-white">{title}</h3>
         
         <div className="flex flex-wrap gap-2 mb-4">
           {technologies.map((tech, index) => (
             <span
               key={index}
-              className="text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-700"
+              className="text-xs px-2 py-1 rounded-md bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300"
             >
               {tech}
             </span>
           ))}
         </div>
         
-        <p className="text-gray-600 mb-6">{description}</p>
+        <p className="text-gray-600 dark:text-gray-300 mb-6">{description}</p>
         
         <a 
           href={link}
           className={cn(
-            "inline-block px-6 py-2 rounded-full bg-projects text-white font-medium",
+            "inline-block px-6 py-2 rounded-md bg-projects text-white font-medium",
             "transform transition-all duration-200 hover:-translate-y-1 hover:shadow-md",
             "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
           )}

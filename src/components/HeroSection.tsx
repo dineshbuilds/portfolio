@@ -4,13 +4,17 @@ import { cn } from '@/lib/utils';
 
 const HeroSection = () => {
   return (
-    <section id="hero" className="min-h-screen flex items-center pt-16 bg-gradient-to-br from-[#f8f9fa] to-[#ffffff]">
+    <section id="hero" className="min-h-screen flex items-center pt-16 bg-gradient-to-br from-[#f8f9fa] to-[#ffffff] dark:from-gray-900 dark:to-gray-800">
       <div className="section-container flex flex-col md:flex-row items-center justify-between gap-10">
         {/* Left side with animation */}
-        <div className="w-full md:w-1/2 flex justify-center animate-float">
+        <div className="w-full md:w-1/2 flex justify-center animate-float relative">
+          <div className="blob blob-1 absolute bg-gradient-to-br from-primary/30 to-secondary/30 dark:from-primary/20 dark:to-secondary/20"></div>
+          <div className="blob blob-2 absolute bg-gradient-to-br from-secondary/30 to-cv/30 dark:from-secondary/20 dark:to-cv/20"></div>
+          <div className="blob blob-3 absolute bg-gradient-to-br from-cv/30 to-projects/30 dark:from-cv/20 dark:to-projects/20"></div>
+          
           <div className="relative w-64 h-64 sm:w-80 sm:h-80">
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-secondary opacity-20 animate-pulse-slow"></div>
-            <div className="absolute inset-[10px] rounded-full bg-white flex items-center justify-center overflow-hidden">
+            <div className="absolute inset-[10px] rounded-full overflow-hidden">
               <img 
                 src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80&w=600" 
                 alt="Coding illustration" 
@@ -22,11 +26,11 @@ const HeroSection = () => {
         
         {/* Right side with text and buttons */}
         <div className="w-full md:w-1/2 text-center md:text-left animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-montserrat mb-4 text-primary">
-            Hi, I'm <span className="text-secondary">Dinesh Raja</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-montserrat mb-4 text-primary dark:text-white">
+            Hi, I'm <span className="text-gradient-primary">Dinesh Raja</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-lg">
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-lg">
             A passionate developer focused on creating beautiful, functional digital experiences.
           </p>
           
@@ -86,7 +90,7 @@ const SocialButton = ({ href, className, children, ...props }: SocialButtonProps
     <a 
       href={href} 
       className={cn(
-        "px-5 py-2.5 rounded-full flex items-center justify-center text-white font-medium",
+        "px-5 py-2.5 rounded-md flex items-center justify-center text-white font-medium",
         "transform transition-all duration-200 hover:-translate-y-1 hover:shadow-lg",
         "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500",
         className

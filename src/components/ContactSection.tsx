@@ -53,37 +53,37 @@ const ContactSection = () => {
   };
   
   return (
-    <section id="contact" className="py-16 md:py-24">
+    <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-white to-[#f9f9f9] dark:from-gray-800 dark:to-gray-900">
       <div className="section-container">
-        <h2 className="section-title text-center mx-auto">Contact Me</h2>
+        <h2 className="section-title text-center mx-auto dark:text-white">Contact Me</h2>
         
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Contact Info */}
           <div className="lg:w-1/2">
-            <div className="glass-card rounded-xl p-8">
-              <h3 className="font-montserrat font-bold text-2xl mb-6 text-primary">Get In Touch</h3>
+            <div className="glass-card rounded-xl p-8 dark:bg-gray-800/50 dark:border-gray-700">
+              <h3 className="font-montserrat font-bold text-2xl mb-6 text-primary dark:text-white">Get In Touch</h3>
               
               <div className="space-y-6">
                 <div>
-                  <p className="font-bold">Name</p>
-                  <p className="text-gray-600">Dinesh Raja M</p>
+                  <p className="font-bold dark:text-white">Name</p>
+                  <p className="text-gray-600 dark:text-gray-300">Dinesh Raja M</p>
                 </div>
                 
                 <div>
-                  <p className="font-bold">Email</p>
-                  <a href="mailto:mdineshraja@gmail.com" className="text-secondary hover:underline">
+                  <p className="font-bold dark:text-white">Email</p>
+                  <a href="mailto:mdineshraja@gmail.com" className="text-secondary hover:underline dark:text-secondary">
                     mdineshraja@gmail.com
                   </a>
                 </div>
                 
                 <div>
-                  <p className="font-bold">Social Media</p>
+                  <p className="font-bold dark:text-white">Social Media</p>
                   <div className="flex gap-4 mt-2">
                     <a 
                       href="https://github.com" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="bg-github text-white p-2 rounded-full hover:opacity-80 transition-opacity"
+                      className="bg-github text-white p-2 rounded-md hover:opacity-80 transition-opacity"
                       aria-label="GitHub Profile"
                     >
                       <Github className="w-5 h-5" />
@@ -92,7 +92,7 @@ const ContactSection = () => {
                       href="https://linkedin.com" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="bg-linkedin text-white p-2 rounded-full hover:opacity-80 transition-opacity"
+                      className="bg-linkedin text-white p-2 rounded-md hover:opacity-80 transition-opacity"
                       aria-label="LinkedIn Profile"
                     >
                       <Linkedin className="w-5 h-5" />
@@ -101,7 +101,7 @@ const ContactSection = () => {
                       href="https://instagram.com" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="bg-gradient-to-br from-purple-500 to-pink-500 text-white p-2 rounded-full hover:opacity-80 transition-opacity"
+                      className="bg-gradient-to-br from-purple-500 to-pink-500 text-white p-2 rounded-md hover:opacity-80 transition-opacity"
                       aria-label="Instagram Profile"
                     >
                       <Instagram className="w-5 h-5" />
@@ -114,12 +114,12 @@ const ContactSection = () => {
           
           {/* Contact Form */}
           <div className="lg:w-1/2">
-            <div className="glass-card rounded-xl p-8">
-              <h3 className="font-montserrat font-bold text-2xl mb-6 text-primary">Send a Message</h3>
+            <div className="glass-card rounded-xl p-8 dark:bg-gray-800/50 dark:border-gray-700">
+              <h3 className="font-montserrat font-bold text-2xl mb-6 text-primary dark:text-white">Send a Message</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Name
                   </label>
                   <input
@@ -128,13 +128,13 @@ const ContactSection = () => {
                     type="text"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                     placeholder="Your name"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Email
                   </label>
                   <input
@@ -143,13 +143,13 @@ const ContactSection = () => {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                     placeholder="your.email@example.com"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Message
                   </label>
                   <textarea
@@ -158,7 +158,7 @@ const ContactSection = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all dark:bg-gray-700 dark:border-gray-600 dark:text-white"
                     placeholder="Your message here..."
                   />
                 </div>
@@ -166,7 +166,7 @@ const ContactSection = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-lg transition-all flex items-center justify-center space-x-2"
+                  className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-md transition-all flex items-center justify-center space-x-2 dark:bg-primary/80"
                 >
                   {isSubmitting ? (
                     <span>Sending...</span>
