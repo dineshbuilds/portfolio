@@ -6,21 +6,18 @@ const HeroSection = () => {
   return (
     <section id="hero" className="min-h-screen flex items-center pt-16 bg-gradient-to-br from-[#f8f9fa] to-[#ffffff] dark:from-gray-900 dark:to-gray-800">
       <div className="section-container flex flex-col md:flex-row items-center justify-between gap-10">
-        {/* Left side with animation */}
+        {/* Left side with enhanced blob animation */}
         <div className="w-full md:w-1/2 flex justify-center animate-float relative">
-          <div className="blob blob-1 absolute bg-gradient-to-br from-primary/30 to-secondary/30 dark:from-primary/20 dark:to-secondary/20"></div>
-          <div className="blob blob-2 absolute bg-gradient-to-br from-secondary/30 to-cv/30 dark:from-secondary/20 dark:to-cv/20"></div>
-          <div className="blob blob-3 absolute bg-gradient-to-br from-cv/30 to-projects/30 dark:from-cv/20 dark:to-projects/20"></div>
+          <div className="blob blob-1 absolute w-[300px] h-[300px] opacity-40 rounded-[40%_60%_60%_40%_/_60%_30%_70%_40%] bg-gradient-to-br from-primary/70 to-secondary/70 dark:from-primary/50 dark:to-secondary/50 animate-blob-slow"></div>
+          <div className="blob blob-2 absolute w-[280px] h-[280px] opacity-40 rounded-[40%_60%_70%_30%_/_50%_60%_40%_60%] bg-gradient-to-br from-secondary/70 to-cv/70 dark:from-secondary/50 dark:to-cv/50 animate-blob-medium"></div>
+          <div className="blob blob-3 absolute w-[260px] h-[260px] opacity-40 rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] bg-gradient-to-br from-cv/70 to-projects/70 dark:from-cv/50 dark:to-projects/50 animate-blob-fast"></div>
           
           <div className="relative w-64 h-64 sm:w-80 sm:h-80">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-secondary opacity-20 animate-pulse-slow"></div>
-            <div className="absolute inset-[10px] rounded-full overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80&w=600" 
-                alt="Coding illustration" 
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <img 
+              src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80&w=600" 
+              alt="Coding illustration" 
+              className="w-full h-full object-cover rounded-full"
+            />
           </div>
         </div>
         
@@ -34,11 +31,11 @@ const HeroSection = () => {
             A passionate developer focused on creating beautiful, functional digital experiences.
           </p>
           
-          {/* Social buttons */}
+          {/* Social buttons with reduced radius */}
           <div className="flex flex-wrap justify-center md:justify-start gap-4">
             <SocialButton 
               href="https://github.com" 
-              className="bg-github"
+              className="bg-github rounded-md"
               aria-label="GitHub Profile"
             >
               <Github className="w-5 h-5 mr-2" />
@@ -47,7 +44,7 @@ const HeroSection = () => {
             
             <SocialButton 
               href="https://linkedin.com" 
-              className="bg-linkedin"
+              className="bg-linkedin rounded-md"
               aria-label="LinkedIn Profile"
             >
               <Linkedin className="w-5 h-5 mr-2" />
@@ -56,7 +53,7 @@ const HeroSection = () => {
             
             <SocialButton 
               href="#" 
-              className="bg-cv"
+              className="bg-cv rounded-md"
               aria-label="Download CV"
             >
               <Download className="w-5 h-5 mr-2" />
@@ -65,7 +62,7 @@ const HeroSection = () => {
             
             <SocialButton 
               href="#projects" 
-              className="bg-projects"
+              className="bg-projects rounded-md"
               aria-label="View Projects"
             >
               <FileText className="w-5 h-5 mr-2" />

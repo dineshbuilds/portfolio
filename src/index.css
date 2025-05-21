@@ -1,27 +1,16 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 316 70% 50%;
+    --secondary-foreground: 0 0% 98%;
+    
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
@@ -33,43 +22,29 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.75rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+    
+    --cv: 142 69% 45%;
+    --projects: 32 95% 55%;
+    --github: 210 12% 16%;
+    --linkedin: 209 100% 38%;
+    
+    --sidebar: 0 0% 100%;
+    --sidebar-foreground: 230 5% 14%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 222.2 84% 4.9%;
+    --sidebar-accent: 210 13% 91%;
+    --sidebar-accent-foreground: 222.2 47.4% 11.2%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
+    --primary: 262 73% 58%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 316 70% 60%;
+    --secondary-foreground: 0 0% 98%;
+    
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
@@ -77,108 +52,119 @@
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-gradient-to-br from-[#F8F9FA] to-[#FFFFFF] dark:from-gray-900 dark:to-gray-800 text-foreground font-poppins;
-    min-height: 100vh;
-  }
-
-  html {
-    scroll-behavior: smooth;
+    --ring: 224.3 76.5% 48%;
+    
+    --sidebar: 222.2 84% 4.9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 212.7 26.8% 83.9%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 210 40% 98%;
   }
 }
 
 @layer components {
-  .glass-card {
-    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg dark:bg-gray-800/30 dark:border-gray-700/30;
+  .section-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
   }
   
-  .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
-  }
-
   .section-title {
-    @apply text-3xl md:text-4xl font-bold font-montserrat mb-10 text-primary relative;
+    @apply text-3xl md:text-4xl font-bold mb-10 relative inline-block;
   }
-
+  
   .section-title::after {
-    content: "";
-    @apply block h-1 w-20 bg-secondary mt-2 dark:bg-secondary;
+    content: '';
+    @apply absolute bottom-0 left-0 w-2/3 h-1 bg-gradient-to-r from-primary to-secondary;
+    transform: translateY(10px);
   }
 
+  .glass-card {
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
   .text-gradient-primary {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-secondary to-projects;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary;
   }
 
-  /* Blob Animation */
-  .blob {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    filter: blur(40px);
-    opacity: 0.6;
-    z-index: -1;
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
+  /* Enhanced blob animations */
+  @keyframes blob-slow {
+    0%, 100% { border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%; transform: translate(0, 0) rotate(0deg); }
+    25% { border-radius: 50% 50% 40% 60% / 40% 50% 50% 60%; transform: translate(-20px, 20px) rotate(5deg); }
+    50% { border-radius: 30% 70% 70% 30% / 50% 40% 60% 50%; transform: translate(20px, -10px) rotate(-5deg); }
+    75% { border-radius: 60% 40% 40% 60% / 30% 60% 40% 70%; transform: translate(-10px, -20px) rotate(3deg); }
   }
 
-  .blob-1 {
-    top: 10%;
-    left: 10%;
-    animation-name: blob1;
+  @keyframes blob-medium {
+    0%, 100% { border-radius: 40% 60% 70% 30% / 50% 60% 40% 60%; transform: translate(0, 0) rotate(0deg); }
+    25% { border-radius: 60% 40% 50% 50% / 30% 60% 40% 70%; transform: translate(15px, -15px) rotate(-3deg); }
+    50% { border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%; transform: translate(-15px, 5px) rotate(5deg); }
+    75% { border-radius: 50% 50% 60% 40% / 40% 50% 60% 40%; transform: translate(10px, 15px) rotate(-5deg); }
   }
 
-  .blob-2 {
-    top: 50%;
-    left: 5%;
-    animation-name: blob2;
+  @keyframes blob-fast {
+    0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: translate(0, 0) rotate(0deg); }
+    25% { border-radius: 40% 60% 50% 50% / 50% 40% 60% 50%; transform: translate(-10px, -15px) rotate(-3deg); }
+    50% { border-radius: 60% 40% 40% 60% / 40% 60% 40% 60%; transform: translate(10px, 10px) rotate(5deg); }
+    75% { border-radius: 40% 60% 60% 40% / 60% 40% 50% 50%; transform: translate(5px, -10px) rotate(-5deg); }
   }
 
-  .blob-3 {
-    bottom: 10%;
-    right: 20%;
-    animation-name: blob3;
+  .animate-blob-slow {
+    animation: blob-slow 20s ease-in-out infinite;
   }
 
-  @keyframes blob1 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(20px, 10px) scale(1.1); }
-    50% { transform: translate(-10px, 30px) scale(0.9); }
-    75% { transform: translate(-30px, -20px) scale(1.05); }
+  .animate-blob-medium {
+    animation: blob-medium 15s ease-in-out infinite;
   }
 
-  @keyframes blob2 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(-20px, -10px) scale(1.1); }
-    50% { transform: translate(15px, -25px) scale(0.9); }
-    75% { transform: translate(20px, 25px) scale(1.05); }
+  .animate-blob-fast {
+    animation: blob-fast 10s ease-in-out infinite;
   }
 
-  @keyframes blob3 {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(-15px, 15px) scale(1.1); }
-    50% { transform: translate(20px, 5px) scale(0.9); }
-    75% { transform: translate(5px, -25px) scale(1.05); }
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+}
+
+/* Add this to the existing tailwind.config.js or update as needed */
+@layer utilities {
+  .bg-github {
+    background-color: hsl(var(--github));
+  }
+  .bg-linkedin {
+    background-color: hsl(var(--linkedin));
+  }
+  .bg-cv {
+    background-color: hsl(var(--cv));
+  }
+  .bg-projects {
+    background-color: hsl(var(--projects));
   }
 }

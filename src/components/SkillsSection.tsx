@@ -40,8 +40,8 @@ const SkillsSection = () => {
           ))}
         </div>
         
-        {/* Skills Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
+        {/* Skills Grid - Modified for better mobile layout */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-6">
           {skillsData[activeTab].map((skill, index) => (
             <SkillCard
               key={index}
@@ -67,12 +67,12 @@ interface SkillCardProps {
 const SkillCard = ({ name, icon, color, glowColor }: SkillCardProps) => {
   return (
     <div 
-      className={`glass-card rounded-xl p-4 flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-2 hover:shadow-lg ${color} group dark:bg-gray-800/50`}
+      className={`glass-card rounded-xl p-2 sm:p-4 flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-2 hover:shadow-lg ${color} group dark:bg-gray-800/50`}
     >
-      <div className={`text-3xl mb-3 group-hover:scale-110 transition-all duration-300 ${glowColor}`}>
+      <div className={`text-2xl sm:text-3xl mb-2 sm:mb-3 group-hover:scale-110 transition-all duration-300 ${glowColor}`}>
         {icon}
       </div>
-      <p className="font-medium text-center dark:text-white">{name}</p>
+      <p className="font-medium text-center text-xs sm:text-sm md:text-base dark:text-white">{name}</p>
     </div>
   );
 };

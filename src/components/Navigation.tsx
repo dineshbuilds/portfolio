@@ -63,23 +63,26 @@ const Navigation = () => {
         </button>
       </div>
       
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md absolute left-0 right-0 py-4 shadow-lg animate-fade-in">
-          <div className="flex flex-col space-y-4 px-4">
-            {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href}
-                className="font-medium text-gray-600 hover:text-secondary transition-colors py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
+      {/* Mobile Menu - Enhanced with slide animation */}
+      <div 
+        className={cn(
+          "md:hidden fixed top-[57px] left-0 w-full h-auto bg-white/95 backdrop-blur-md shadow-lg transition-transform duration-200 ease-in-out transform",
+          mobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        )}
+      >
+        <div className="flex flex-col space-y-4 px-4 py-4">
+          {navLinks.map((link) => (
+            <a 
+              key={link.name} 
+              href={link.href}
+              className="font-medium text-gray-600 hover:text-secondary transition-colors py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {link.name}
+            </a>
+          ))}
         </div>
-      )}
+      </div>
     </nav>
   );
 };
