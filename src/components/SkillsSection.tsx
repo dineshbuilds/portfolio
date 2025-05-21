@@ -5,10 +5,10 @@ import { FaJava, FaReact, FaHtml5, FaCss3Alt, FaJs, FaDatabase, FaGitAlt, FaFire
 import { BiTargetLock, BiSearch } from 'react-icons/bi';
 import { MdOutlineDesignServices, MdOutlineGraphicEq } from 'react-icons/md';
 import { RiPenNibLine, RiFolderChart2Line } from 'react-icons/ri';
-import { SiFramer, SiAdobeillustrator, SiGithubcopilot, SiCursor } from 'react-icons/si';
+import { SiFramer, SiAdobeillustrator } from 'react-icons/si';
 import { TbBrandOpenai, TbPlane } from 'react-icons/tb';
 import { BsLightningCharge, BsPuzzle, BsHeartFill, BsCloud } from 'react-icons/bs';
-import { HiOutlineSupportAgent } from 'react-icons/hi';
+import { HiOutlineSupport } from 'react-icons/hi';
 import { AiOutlineFileExcel } from 'react-icons/ai';
 import { DiPhotoshop } from 'react-icons/di';
 import { GiPhotoCamera } from 'react-icons/gi';
@@ -106,8 +106,8 @@ const skillsData = {
     { name: 'Illustrator', icon: <SiAdobeillustrator />, color: 'bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20', glowColor: 'text-orange-500' }
   ],
   ai: [
-    { name: 'GitHub Copilot', icon: <SiGithubcopilot />, color: 'bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700/20 dark:to-gray-600/20', glowColor: 'text-gray-500' },
-    { name: 'Cursor', icon: <SiCursor />, color: 'bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20', glowColor: 'text-blue-500' },
+    { name: 'GitHub Copilot', icon: <BsPuzzle />, color: 'bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700/20 dark:to-gray-600/20', glowColor: 'text-gray-500' },
+    { name: 'Coding AI', icon: <TbBrandOpenai />, color: 'bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20', glowColor: 'text-blue-500' },
     { name: 'UX Pilot', icon: <TbPlane />, color: 'bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20', glowColor: 'text-purple-500' },
     { name: 'Lovable', icon: <BsHeartFill />, color: 'bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20', glowColor: 'text-red-500' },
     { name: 'ChatGPT', icon: <TbBrandOpenai />, color: 'bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20', glowColor: 'text-green-500' },
@@ -116,8 +116,8 @@ const skillsData = {
     { name: 'Firefly', icon: <BsLightningCharge />, color: 'bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-900/20 dark:to-amber-800/20', glowColor: 'text-amber-500' }
   ],
   others: [
-    { name: 'AI-Driven Coding', icon: <SiGithubcopilot />, color: 'bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700/20 dark:to-gray-600/20', glowColor: 'text-gray-500' },
-    { name: 'Technical Support', icon: <HiOutlineSupportAgent />, color: 'bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20', glowColor: 'text-blue-500' },
+    { name: 'AI-Driven Coding', icon: <BsPuzzle />, color: 'bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700/20 dark:to-gray-600/20', glowColor: 'text-gray-500' },
+    { name: 'Technical Support', icon: <HiOutlineSupport />, color: 'bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20', glowColor: 'text-blue-500' },
     { name: 'Microsoft 365', icon: <AiOutlineFileExcel />, color: 'bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20', glowColor: 'text-blue-500' },
     { name: 'Adobe Photoshop', icon: <DiPhotoshop />, color: 'bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20', glowColor: 'text-blue-500' },
     { name: 'Lightroom', icon: <GiPhotoCamera />, color: 'bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20', glowColor: 'text-blue-500' },
