@@ -5,6 +5,8 @@ import iceCreamTown from '../assest/project img/ice cream town.png';
 import safetyFirst from '../assest/project img/safetyfirst.png';
 import weatherApp from '../assest/project img/weather.png';
 import portfolioImage from '../assest/project img/portfolio.png';
+import freelancingSite from '/lovable-uploads/49ec1781-4e60-4f06-a8ad-913979c9b218.png';
+
 const ProjectsSection = () => {
   return (
     <section id="projects" className="bg-gradient-to-br from-[#f9f9f9] to-white dark:from-gray-900 dark:to-gray-800 py-16 md:py-24">
@@ -80,6 +82,13 @@ const ProjectCard = ({ title, description, image, technologies, link }: ProjectC
 
 const projects = [
   {
+    title: "My Freelancing Site",
+    description: "A modern freelancing portfolio website built with React, TypeScript, and Tailwind CSS, showcasing services and pricing with an elegant design.",
+    image: freelancingSite,
+    technologies: ["React", "Tailwind CSS", "TypeScript", "GitHub", "Vercel", "Lovable"],
+    link: "https://dineshcreates.vercel.app/"
+  },
+  {
     title: "Marvel Snaps",
     description: "A React.js-based photographer portfolio site featuring an attractive UI, optimized code, WhatsApp API integration, and hosted on Vercel for fast performance.",
     image: marvelSnaps,
@@ -108,13 +117,12 @@ const projects = [
     link: "https://weather-five-rho.vercel.app/"
   }, 
   {
-  title: "Personal Portfolio Website",
-  description: "A fully responsive portfolio website built using React.js and Typescript to showcase projects, skills, and contact information.",
-  image: portfolioImage, // Replace with your actual image variable or path
-  technologies: ["React", "Tailwaind CSS","Typescript","GitHub", "Vercel", "Lovable"],
-  link: "https://dineshraja.vercel.app/" // Replace with your actual portfolio URL
-}
-
+    title: "Personal Portfolio Website",
+    description: "A fully responsive portfolio website built using React.js and Typescript to showcase projects, skills, and contact information.",
+    image: portfolioImage,
+    technologies: ["React", "Tailwaind CSS","Typescript","GitHub", "Vercel", "Lovable"],
+    link: "https://dineshraja.vercel.app/"
+  }
 ];
 
 export default ProjectsSection;

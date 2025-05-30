@@ -1,31 +1,16 @@
 
 import { Briefcase, Code, LayoutDashboard, Brain } from "lucide-react";
-import mypic from "../assest/about/my pic.jpg";
 
 const AboutSection = () => {
   return (
     <section id="about" className="bg-gradient-to-br from-[#f8f9fa] to-white dark:from-gray-900 dark:to-gray-800 py-16 md:py-24">
       <div className="section-container">
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
-          {/* Left side - Profile Image */}
-          <div className="lg:w-1/3 flex justify-center">
-            <div className="relative w-64 h-64 md:w-80 md:h-80">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-secondary opacity-20 animate-pulse-slow"></div>
-              <div className="absolute inset-[5px] rounded-full overflow-hidden">
-                <img 
-                  src={mypic}
-                  alt="Dinesh Raja" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-          
-          {/* Right side - Content */}
-          <div className="lg:w-2/3">
-            <h2 className="section-title text-gray-800 dark:text-white">About Me</h2>
+        <div className="flex flex-col items-center">
+          {/* Content */}
+          <div className="w-full max-w-4xl">
+            <h2 className="section-title text-gray-800 dark:text-white text-center mx-auto">About Me</h2>
             
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 text-center">
               I'm a passionate developer and designer with expertise in front-end development,
               UI/UX design, and creative problem solving. With a keen eye for detail and a love
               for clean, efficient code, I create beautiful digital experiences that users love.

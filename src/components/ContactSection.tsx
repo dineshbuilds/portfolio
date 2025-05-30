@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Github, Linkedin, Instagram, MessageSquare } from 'lucide-react';
+import { Github, Linkedin, Instagram, MessageSquare, Phone } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const ContactSection = () => {
@@ -73,6 +73,14 @@ const ContactSection = () => {
                   <p className="font-bold dark:text-white">Email</p>
                   <a href="mailto:mdineshraja@gmail.com" className="text-secondary hover:underline dark:text-secondary">
                     mdineshraja@gmail.com
+                  </a>
+                </div>
+                
+                <div>
+                  <p className="font-bold dark:text-white">Phone</p>
+                  <a href="tel:+919150256608" className="text-secondary hover:underline dark:text-secondary flex items-center gap-2">
+                    <Phone className="w-4 h-4" />
+                    +91 9150256608
                   </a>
                 </div>
                 
