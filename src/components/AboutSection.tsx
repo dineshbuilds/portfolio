@@ -1,5 +1,6 @@
 
 import { Briefcase, Code, LayoutDashboard, Brain } from "lucide-react";
+import mypic from "../assest/about/my pic.jpg";
 
 const AboutSection = () => {
   return (
@@ -12,7 +13,7 @@ const AboutSection = () => {
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary to-secondary opacity-20 animate-pulse-slow"></div>
               <div className="absolute inset-[5px] rounded-full overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&q=80&w=500" 
+                  src={mypic}
                   alt="Dinesh Raja" 
                   className="w-full h-full object-cover"
                 />

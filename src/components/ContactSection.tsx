@@ -80,7 +80,7 @@ const ContactSection = () => {
                   <p className="font-bold dark:text-white">Social Media</p>
                   <div className="flex gap-4 mt-2">
                     <a 
-                      href="https://github.com" 
+                      href="https://github.com/dineshraja03" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="bg-github text-white p-2 rounded-md hover:opacity-80 transition-opacity"
@@ -89,7 +89,7 @@ const ContactSection = () => {
                       <Github className="w-5 h-5" />
                     </a>
                     <a 
-                      href="https://linkedin.com" 
+                      href="https://www.linkedin.com/in/mdineshraja03/" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="bg-linkedin text-white p-2 rounded-md hover:opacity-80 transition-opacity"
@@ -98,7 +98,7 @@ const ContactSection = () => {
                       <Linkedin className="w-5 h-5" />
                     </a>
                     <a 
-                      href="https://instagram.com" 
+                      href="https://instagram.com/_dinesh_raja__" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="bg-gradient-to-br from-purple-500 to-pink-500 text-white p-2 rounded-md hover:opacity-80 transition-opacity"
