@@ -131,7 +131,11 @@
   }
 
   .animate-pulse-slow {
-    animation: pulse 3s infinite;
+    animation: pulse-slow 4s infinite;
+  }
+
+  .animate-bounce-subtle {
+    animation: bounce-subtle 3s ease-in-out infinite;
   }
 
   @keyframes float {
@@ -143,12 +147,24 @@
     }
   }
 
-  @keyframes pulse {
+  @keyframes pulse-slow {
     0%, 100% {
-      opacity: 0.3;
+      opacity: 0.2;
     }
     50% {
-      opacity: 0.6;
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes bounce-subtle {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-10px) rotate(5deg);
+    }
+    75% {
+      transform: translateY(-5px) rotate(-3deg);
     }
   }
 }
