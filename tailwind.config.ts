@@ -119,6 +119,14 @@ export default {
 					'50%': { backgroundPosition: '100% 50%' },
 					'100%': { backgroundPosition: '0% 50%' }
 				},
+				aurora: {
+					from: {
+						backgroundPosition: '50% 50%, 50% 50%',
+					},
+					to: {
+						backgroundPosition: '350% 50%, 350% 50%',
+					},
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -128,6 +136,7 @@ export default {
 				'float': 'float 3s ease-in-out infinite',
 				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
 				'gradient-shift': 'gradient-shift 15s ease infinite',
+				aurora: 'aurora 60s linear infinite',
 			},
 			backgroundImage: {
 				'hero-gradient': 'linear-gradient(135deg, #2A2A72 0%, #009DDC 100%)',

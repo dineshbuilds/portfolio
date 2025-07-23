@@ -1,13 +1,15 @@
 
 import { Github, Linkedin, FileText, Download } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { AuroraBackground } from '@/components/ui/aurora-background';
 import astro from '../assest/hero/astro.gif';
 
 
 const HeroSection = () => {
   return (
-    <section id="hero" className="min-h-screen flex items-center pt-16 bg-gradient-to-br from-[#f8f9fa] to-[#ffffff] dark:from-gray-900 dark:to-gray-800">
-      <div className="section-container flex flex-col md:flex-row items-center justify-between gap-10">
+    <section id="hero" className="min-h-screen relative">
+      <AuroraBackground className="min-h-screen flex items-center pt-16">
+        <div className="section-container flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
         {/* Left side with enhanced blob animation */}
         <div className="w-full md:w-1/2 flex justify-center animate-float relative">
           <div className="blob blob-1 absolute w-[250px] h-[250px] md:w-[350px] md:h-[350px] opacity-40 rounded-[40%_60%_60%_40%_/_60%_30%_70%_40%] bg-gradient-to-br from-primary/70 to-secondary/70 dark:from-primary/50 dark:to-secondary/50 animate-blob-slow"></div>
@@ -72,7 +74,8 @@ const HeroSection = () => {
             </SocialButton>
           </div>
         </div>
-      </div>
+        </div>
+      </AuroraBackground>
     </section>
   );
 };

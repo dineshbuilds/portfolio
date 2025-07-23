@@ -13,7 +13,7 @@ const ProjectsSection = () => {
       <div className="section-container">
         <h2 className="section-title text-center mx-auto dark:text-white">My Projects</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <ProjectCard
               key={index}
@@ -40,12 +40,12 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, image, technologies, link }: ProjectCardProps) => {
   return (
-    <div className="glass-card rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-gray-800/50 dark:border-gray-700">
-      <div className="h-48 md:h-64 overflow-hidden">
+    <div className="glass-card rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-gray-800/50 dark:border-gray-700 max-w-sm mx-auto">
+      <div className="h-48 md:h-52 overflow-hidden bg-gray-100 dark:bg-gray-700">
         <img 
           src={image} 
           alt={title} 
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          className="w-full h-full object-contain transition-transform duration-500 hover:scale-110 p-2"
         />
       </div>
       
