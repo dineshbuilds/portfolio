@@ -1,5 +1,6 @@
 
 import { Briefcase, Code, LayoutDashboard, Brain } from "lucide-react";
+import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 
 const AboutSection = () => {
   return (
@@ -7,27 +8,17 @@ const AboutSection = () => {
       <div className="section-container">
         <div className="flex flex-col items-center">
           {/* Content */}
-          <div className="w-full max-w-4xl">
+          <div className="w-full max-w-6xl">
             <h2 className="section-title text-gray-800 dark:text-white text-center mx-auto">About Me</h2>
             
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 text-center">
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-12 text-center">
               I'm a passionate developer and designer with expertise in front-end development,
               UI/UX design, and creative problem solving. With a keen eye for detail and a love
               for clean, efficient code, I create beautiful digital experiences that users love.
             </p>
             
-            {/* Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {aboutCards.map((card, index) => (
-                <AboutCard 
-                  key={index} 
-                  title={card.title} 
-                  description={card.description} 
-                  icon={card.icon} 
-                  color={card.color}
-                />
-              ))}
-            </div>
+            {/* Radial Orbital Timeline */}
+            <RadialOrbitalTimeline timelineData={aboutTimelineData} />
           </div>
         </div>
       </div>
@@ -57,6 +48,53 @@ const AboutCard = ({ title, description, icon, color }: AboutCardProps) => {
     </div>
   );
 };
+
+const aboutTimelineData = [
+  {
+    id: 1,
+    title: "Freelancer",
+    date: "2020-Present",
+    content: "I work with clients worldwide to create custom digital solutions that meet their unique needs. Delivering high-quality projects with attention to detail and client satisfaction.",
+    category: "Business",
+    icon: Briefcase,
+    relatedIds: [2, 3],
+    status: "completed" as const,
+    energy: 95,
+  },
+  {
+    id: 2,
+    title: "Front End Developer",
+    date: "2019-Present",
+    content: "I build responsive, interactive websites and applications with modern frameworks and tools. Specializing in React, TypeScript, and modern web technologies.",
+    category: "Development",
+    icon: Code,
+    relatedIds: [1, 3, 4],
+    status: "completed" as const,
+    energy: 90,
+  },
+  {
+    id: 3,
+    title: "UI/UX Designer",
+    date: "2018-Present",
+    content: "I design intuitive user interfaces and experiences that balance form and function. Creating user-centered designs that solve real problems.",
+    category: "Design",
+    icon: LayoutDashboard,
+    relatedIds: [1, 2, 4],
+    status: "completed" as const,
+    energy: 85,
+  },
+  {
+    id: 4,
+    title: "Real-time Problem Solver",
+    date: "Always",
+    content: "I tackle complex challenges with creative thinking and technical expertise. Finding innovative solutions to technical and design problems.",
+    category: "Problem Solving",
+    icon: Brain,
+    relatedIds: [2, 3],
+    status: "in-progress" as const,
+    energy: 88,
+  }
+];
 
 const aboutCards = [
   {
