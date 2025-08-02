@@ -76,13 +76,6 @@ const ContactSection = () => {
                   </a>
                 </div>
                 
-                <div>
-                  <p className="font-bold dark:text-white">Phone</p>
-                  <a href="tel:+919150256608" className="text-secondary hover:underline dark:text-secondary flex items-center gap-2">
-                    <Phone className="w-4 h-4" />
-                    +91 9150256608
-                  </a>
-                </div>
                 
                 <div>
                   <p className="font-bold dark:text-white">Social Media</p>
