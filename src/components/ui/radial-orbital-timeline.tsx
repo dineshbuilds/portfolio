@@ -113,7 +113,8 @@ export default function RadialOrbitalTimeline({
 
   const calculateNodePosition = (index: number, total: number) => {
     const angle = ((index / total) * 360 + rotationAngle) % 360;
-    const radius = 200;
+    // Responsive radius: smaller on mobile
+    const radius = typeof window !== 'undefined' && window.innerWidth < 768 ? 120 : 200;
     const radian = (angle * Math.PI) / 180;
 
     const x = radius * Math.cos(radian) + centerOffset.x;
@@ -142,23 +143,23 @@ export default function RadialOrbitalTimeline({
   const getStatusStyles = (status: TimelineItem["status"]): string => {
     switch (status) {
       case "completed":
-        return "text-white bg-primary border-white";
+        return "text-black bg-green-400 border-green-400";
       case "in-progress":
-        return "text-white bg-secondary border-white";
+        return "text-black bg-blue-400 border-blue-400";
       case "pending":
-        return "text-white bg-cv border-white";
+        return "text-black bg-yellow-400 border-yellow-400";
       default:
-        return "text-white bg-projects border-white";
+        return "text-black bg-purple-400 border-purple-400";
     }
   };
 
   return (
     <div
-      className="w-full h-[600px] flex flex-col items-center justify-center bg-gradient-to-br from-primary/10 via-secondary/10 to-cv/10 dark:from-primary/5 dark:via-secondary/5 dark:to-cv/5 overflow-hidden rounded-2xl"
+      className="w-full h-[400px] md:h-[600px] flex flex-col items-center justify-center bg-gradient-to-br from-primary/10 via-secondary/10 to-cv/10 dark:from-primary/5 dark:via-secondary/5 dark:to-cv/5 overflow-hidden rounded-2xl"
       ref={containerRef}
       onClick={handleContainerClick}
     >
-      <div className="relative w-full max-w-4xl h-full flex items-center justify-center">
+      <div className="relative w-full max-w-sm md:max-w-4xl h-full flex items-center justify-center">
         <div
           className="absolute w-full h-full flex items-center justify-center"
           ref={orbitRef}
@@ -167,16 +168,16 @@ export default function RadialOrbitalTimeline({
             transform: `translate(${centerOffset.x}px, ${centerOffset.y}px)`,
           }}
         >
-          <div className="absolute w-16 h-16 rounded-full bg-gradient-to-br from-primary via-secondary to-cv animate-pulse flex items-center justify-center z-10">
-            <div className="absolute w-20 h-20 rounded-full border border-primary/20 animate-ping opacity-70"></div>
+          <div className="absolute w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-500 animate-pulse flex items-center justify-center z-10 shadow-lg shadow-blue-500/30">
+            <div className="absolute w-16 h-16 md:w-20 md:h-20 rounded-full border border-blue-400/30 animate-ping opacity-70"></div>
             <div
-              className="absolute w-24 h-24 rounded-full border border-secondary/10 animate-ping opacity-50"
+              className="absolute w-20 h-20 md:w-24 md:h-24 rounded-full border border-purple-400/20 animate-ping opacity-50"
               style={{ animationDelay: "0.5s" }}
             ></div>
-            <div className="w-8 h-8 rounded-full bg-white/80 backdrop-blur-md"></div>
+            <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-white shadow-inner"></div>
           </div>
 
-          <div className="absolute w-96 h-96 rounded-full border border-primary/20"></div>
+          <div className="absolute w-60 h-60 md:w-96 md:h-96 rounded-full border border-blue-400/20"></div>
 
           {timelineData.map((item, index) => {
             const position = calculateNodePosition(index, timelineData.length);
@@ -217,35 +218,34 @@ export default function RadialOrbitalTimeline({
 
                 <div
                   className={`
-                  w-12 h-12 rounded-full flex items-center justify-center
+                  w-8 h-8 md:w-12 md:h-12 rounded-full flex items-center justify-center
                   ${
                     isExpanded
-                      ? "bg-primary text-primary-foreground"
+                      ? "bg-blue-500 text-white shadow-lg shadow-blue-500/30"
                       : isRelated
-                      ? "bg-secondary text-secondary-foreground"
-                      : "bg-background border-2 border-primary text-foreground"
+                      ? "bg-purple-500 text-white shadow-lg shadow-purple-500/30"
+                      : "bg-white border-2 border-blue-400 text-blue-600 shadow-lg"
                   }
                   transition-all duration-300 transform
                   ${isExpanded ? "scale-150" : ""}
-                  shadow-lg
                 `}
                 >
-                  <Icon size={20} />
+                  <Icon size={16} className="md:w-5 md:h-5" />
                 </div>
 
                 <div
                   className={`
-                  absolute top-14 left-1/2 -translate-x-1/2 whitespace-nowrap
+                  absolute top-10 md:top-14 left-1/2 -translate-x-1/2 whitespace-nowrap
                   text-xs font-semibold tracking-wider
                   transition-all duration-300
-                  ${isExpanded ? "text-foreground scale-125" : "text-muted-foreground"}
+                  ${isExpanded ? "text-white scale-125 font-bold" : "text-gray-300"}
                 `}
                 >
                   {item.title}
                 </div>
 
                 {isExpanded && (
-                  <Card className="absolute top-20 left-1/2 -translate-x-1/2 w-64 bg-background/95 backdrop-blur-lg border shadow-xl overflow-visible">
+                  <Card className="absolute top-16 md:top-20 left-1/2 -translate-x-1/2 w-56 md:w-64 bg-gray-900/95 backdrop-blur-lg border-gray-600 shadow-xl overflow-visible text-white">
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-px h-3 bg-border"></div>
                     <CardHeader className="pb-2">
                       <div className="flex justify-between items-center">
