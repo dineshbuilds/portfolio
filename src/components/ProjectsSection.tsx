@@ -9,7 +9,7 @@ import freelancingSite from '/lovable-uploads/49ec1781-4e60-4f06-a8ad-913979c9b2
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="bg-gradient-to-br from-[#f9f9f9] to-white dark:from-gray-900 dark:to-gray-800 py-16 md:py-24">
+  <section id="projects" className="bg-gradient-to-br from-[#0b1220] to-[#0f172a] py-16 md:py-24">
       <div className="section-container">
         <h2 className="section-title text-center mx-auto dark:text-white">My Projects</h2>
         

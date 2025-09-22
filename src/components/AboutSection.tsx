@@ -4,21 +4,36 @@ import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="bg-gradient-to-br from-[#f8f9fa] to-white dark:from-gray-900 dark:to-gray-800 py-16 md:py-24">
+  <section id="about" className="bg-gradient-to-br from-[#0b1220] to-[#0f172a] py-16 md:py-24">
       <div className="section-container">
         <div className="flex flex-col items-center">
           {/* Content */}
           <div className="w-full max-w-6xl">
-            <h2 className="section-title text-gray-800 dark:text-white text-center mx-auto">About Me</h2>
+            <h2 className="section-title text-white text-center mx-auto">About Me</h2>
             
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-12 text-center">
+            <p className="text-lg text-gray-300 mb-12 text-center">
               I'm a passionate developer and designer with expertise in front-end development,
               UI/UX design, and creative problem solving. With a keen eye for detail and a love
               for clean, efficient code, I create beautiful digital experiences that users love.
             </p>
             
-            {/* Radial Orbital Timeline */}
-            <RadialOrbitalTimeline timelineData={aboutTimelineData} />
+            {/* Cards with progress bars (replaces spinning timeline) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+              {aboutCards.map((c, idx) => (
+                <div key={idx} className="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-xl p-6 shadow-sm">
+                  <div className="flex items-center justify-between">
+                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center text-white ${c.color}`}>{c.icon}</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-400">{aboutTimelineData[idx]?.date ?? ''}</div>
+                  </div>
+                  <h3 className="mt-4 font-semibold text-lg text-gray-800 dark:text-white">{c.title}</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mt-2">{c.description}</p>
+
+                  <div className="mt-4">
+                    <ProgressBar value={aboutTimelineData[idx]?.energy ?? 70} />
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -124,3 +139,17 @@ const aboutCards = [
 ];
 
 export default AboutSection;
+
+const ProgressBar = ({ value = 50 }: { value?: number }) => {
+  return (
+    <div className="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-3 overflow-hidden">
+      <div
+        className="h-3 bg-gradient-to-r from-primary to-secondary"
+        style={{ width: `${Math.max(0, Math.min(100, value))}%` }}
+        aria-valuenow={value}
+        aria-valuemin={0}
+        aria-valuemax={100}
+      />
+    </div>
+  );
+};

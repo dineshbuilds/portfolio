@@ -1,22 +1,21 @@
 
 import { Github, Linkedin, FileText, Download } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { AuroraBackground } from '@/components/ui/aurora-background';
 import astro from '../assest/hero/astro.gif';
 
 
 const HeroSection = () => {
   return (
     <section id="hero" className="min-h-screen relative">
-      <AuroraBackground className="min-h-screen flex items-center pt-16">
-        <div className="section-container flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
+      <div className="min-h-screen flex items-center pt-16 text-white">
+        <div className="section-container flex flex-col md:flex-row items-center justify-between gap-10 relative z-20">
         {/* Left side with enhanced blob animation */}
-        <div className="w-full md:w-1/2 flex justify-center animate-float relative">
-          <div className="blob blob-1 absolute w-[250px] h-[250px] md:w-[350px] md:h-[350px] opacity-40 rounded-[40%_60%_60%_40%_/_60%_30%_70%_40%] bg-gradient-to-br from-primary/70 to-secondary/70 dark:from-primary/50 dark:to-secondary/50 animate-blob-slow"></div>
-          <div className="blob blob-2 absolute w-[230px] h-[230px] md:w-[330px] md:h-[330px] opacity-40 rounded-[40%_60%_70%_30%_/_50%_60%_40%_60%] bg-gradient-to-br from-secondary/70 to-cv/70 dark:from-secondary/50 dark:to-cv/50 animate-blob-medium"></div>
-          <div className="blob blob-3 absolute w-[210px] h-[210px] md:w-[310px] md:h-[310px] opacity-40 rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] bg-gradient-to-br from-cv/70 to-projects/70 dark:from-cv/50 dark:to-projects/50 animate-blob-fast"></div>
+        <div className="w-full md:w-1/2 flex justify-center animate-float relative z-30">
+          <div className="blob blob-1 absolute w-[250px] h-[250px] md:w-[350px] md:h-[350px] opacity-60 rounded-[40%_60%_60%_40%_/_60%_30%_70%_40%] bg-gradient-to-br from-primary/70 to-secondary/70 dark:from-primary/50 dark:to-secondary/50 animate-blob-slow"></div>
+          <div className="blob blob-2 absolute w-[230px] h-[230px] md:w-[330px] md:h-[330px] opacity-60 rounded-[40%_60%_70%_30%_/_50%_60%_40%_60%] bg-gradient-to-br from-secondary/70 to-cv/70 dark:from-secondary/50 dark:to-cv/50 animate-blob-medium"></div>
+          <div className="blob blob-3 absolute w-[210px] h-[210px] md:w-[310px] md:h-[310px] opacity-60 rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] bg-gradient-to-br from-cv/70 to-projects/70 dark:from-cv/50 dark:to-projects/50 animate-blob-fast"></div>
           
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80">
+          <div className="relative w-64 h-64 sm:w-80 sm:h-80 z-50 bg-transparent">
             <img 
               src="https://cliply.co/wp-content/uploads/2019/07/371907670_SUPERHERO_400px.gif"
               alt="Coding illustration" 
@@ -27,16 +26,16 @@ const HeroSection = () => {
         
         {/* Right side with text and buttons */}
         <div className="w-full md:w-1/2 text-center md:text-left animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-montserrat mb-4 text-primary dark:text-white">
-            Hi, I'm <span className="text-gradient-primary">Dinesh Raja</span>
+          <h1 data-animate="hero-title" className="text-4xl sm:text-5xl md:text-6xl font-bold font-montserrat mb-4 text-white drop-shadow-lg">
+            Hi, I'm <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-sky-400 to-indigo-500">Dinesh Raja</span>
           </h1>
-          
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-lg">
+
+          <p data-animate="hero-sub" className="text-lg md:text-xl text-gray-200 mb-10 max-w-lg">
             A passionate developer focused on creating beautiful, functional digital experiences.
           </p>
           
           {/* Social buttons with reduced radius */}
-          <div className="flex flex-wrap justify-center md:justify-start gap-4">
+          <div className="flex flex-wrap justify-center md:justify-start gap-4" data-animate="hero-buttons">
             <SocialButton 
               href="https://github.com/Dineshraja03" 
               className="bg-github rounded-md"
@@ -75,7 +74,7 @@ const HeroSection = () => {
           </div>
         </div>
         </div>
-      </AuroraBackground>
+      </div>
     </section>
   );
 };

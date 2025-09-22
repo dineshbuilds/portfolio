@@ -188,3 +188,23 @@ html {
     background-color: hsl(var(--projects));
   }
 }
+
+/* site-wide dark background */
+html, body, #root {
+  background: #05060a; /* deep black */
+  color: #e6eef8;
+}
+
+/* increase blob contrast on darker backdrop */
+.blob { filter: drop-shadow(0 10px 28px rgba(0,0,0,0.6)); }
+
+/* Responsive tweaks and safety resets for animations */
+@layer utilities {
+  .blob { transition: transform 0.25s ease; }
+  @media (min-width: 640px) {
+    .blob { width: 180px !important; height: 180px !important; }
+  }
+
+  /* Ensure parallax transform is not cumulative by using will-change */
+  section { will-change: transform; }
+}
